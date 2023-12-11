@@ -8,4 +8,6 @@ class Item < ApplicationRecord
   def restore
     update(deleted_at: nil)
   end
+
+	default_scope { where(deleted_at: nil) }
 end
