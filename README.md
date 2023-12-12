@@ -1,24 +1,27 @@
-# README
+# PacerPro Soft Delete Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+1. Clone the repository:
 
-* Ruby version
+   ```
+   git clone https://github.com/jvelis94/PacerSoftDelete.git
 
-* System dependencies
+   cd PacerSoftDelete
+   ```
 
-* Configuration
+2. Install dependencies and create database:
 
-* Database creation
+   ```
+   bundle install
 
-* Database initialization
+   rails db:create db:migrate
+   ```
 
-* How to run the test suite
+3. Implementation:
+   `soft_delete`: Marks an item as deleted by updating the deleted_at attribute with the current timestamp.
+   `restore`: Restores a soft-deleted item by setting the deleted_at attribute to nil.
+   `Default Scope`: Soft-deleted items are excluded from normal queries by default.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. Run Tests
+   `bundle exec rspec`
